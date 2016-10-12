@@ -13,9 +13,8 @@ var awayba = .300;
 var awaybaa = .225;
 var inn = 1;
 var outs = 0;
-var bases = [0, 0, 0, 0];
-var hruns = 0;
-var aruns = 0;
+var bases = [false, false, false];
+var runs = 0;
 var hrpct = 300;
 var tplpct = 100;
 var dblpct = 250;
@@ -28,12 +27,15 @@ function pitch(){
 	hitprob = hitprob.toFixed(3);
 	hitprob = hitprob * 1000;
 	var ranNum = Math.floor(Math.random() * 1000) + 1;
-	console.log(ranNum);
 	if (ranNum < hitprob){
 		hit();
+		console.log("Bases: " + bases);
+		console.log("Runs: " + runs);
 	}
 	else {
 		out();
+		console.log("Bases: " + bases);
+		console.log("Runs: " + runs);
 	};
 };
 
@@ -41,21 +43,24 @@ function hit(){
 	var hitNum = Math.floor(Math.random() * 1000) + 1;
 	if (hitNum < sglpct) {
 		console.log("SINGLE");
+		single();
 	}
 	else if (hitNum < (sglpct + dblpct)) {
 		console.log("DOUBLE");
+		double();
 	}
 	else if (hitNum < (sglpct + dblpct + tplpct)) {
 		console.log("TRIPLE");
+		triple();
 	}
 	else {
 		console.log("HOME RUN")
+		homerun();
 	};
 };
 
 function out(){
 	var SOnum = Math.floor(Math.random() * 1000) + 1;
-	console.log(SOnum);
 	if (SOnum < kpct){
 		console.log("STRIKE OUT");
 	}
@@ -63,5 +68,80 @@ function out(){
 		console.log("OUT");
 	}
 }
+
+function single(){
+	if (bases[2] === true){
+		bases[2] = false;
+		bases[0] = true;
+		runs++;
+	};
+	if (bases[1] === true){
+		bases[2] = true;
+		bases[1] = false;
+		bases[0] = true;
+	};
+	if (bases[0] === true){
+		bases[1] = true;
+		bases[0] = true;
+	};
+	if (bases = [false, false, false]){
+		bases[0] = true;
+	};
+};
+
+function double(){
+	if (bases[2] === true){
+		bases[2] = false;
+		bases[1] = true;
+		runs++;
+	};
+	if (bases[1] === true){
+		bases[1] = true;
+		runs++;
+	};
+	if (bases[0] === true){
+		bases[2] = true;
+		bases[0] = false;
+	};
+	if (bases = [false, false, false]){
+		bases[1] = true;
+	};
+
+}; 
+
+function triple(){
+	if (bases[2] === true){
+		bases[2] = false;
+		runs++;
+	};
+	if (bases[1] === true){
+		bases[1] = false;
+		runs++;
+	};
+	if (bases[0] === true){
+		bases[0] = false;
+		runs++;
+	};
+	if (bases = [false, false, false]){
+		bases[2] = true;
+	};
+}; 
+
+function homerun(){
+	if (bases[2] === true){
+		bases[2] = false;
+		runs++;
+	};
+	if (bases[1] === true){
+		bases[1] = false;
+		runs++;
+	};
+	if (bases[0] === true){
+		bases[0] = false;
+		runs++;
+	};
+	runs++;
+	return
+}; 
 
 pitch();
