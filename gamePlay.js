@@ -15,6 +15,8 @@ var inn = 1;
 var outs = 0;
 var bases = [false, false, false];
 var runs = 0;
+var aruns = 0;
+var hruns = 0;
 var hrpct = 300;
 var tplpct = 100;
 var dblpct = 250;
@@ -29,13 +31,15 @@ function pitch(){
 	var ranNum = Math.floor(Math.random() * 1000) + 1;
 	if (ranNum < hitprob){
 		hit();
-		console.log("Bases: " + bases);
+		console.log("Outs: " + outs);
 		console.log("Runs: " + runs);
+		console.log("Inning: " + inn);
 	}
 	else {
 		out();
-		console.log("Bases: " + bases);
+		console.log("Outs: " + outs);
 		console.log("Runs: " + runs);
+		console.log("Inning: " + inn);
 	};
 };
 
@@ -62,10 +66,12 @@ function hit(){
 function out(){
 	var SOnum = Math.floor(Math.random() * 1000) + 1;
 	if (SOnum < kpct){
+		outs++
 		console.log("STRIKE OUT");
 	}
 	else {
 		console.log("OUT");
+		outs++
 	}
 }
 
@@ -143,5 +149,75 @@ function homerun(){
 	runs++;
 	return
 }; 
+ function awayOffense(){
+	if (inn > 9){
+		aruns = runs;
+		console.log("The away team scored: " + aruns + " runs.");
+		inn = 1;
+		outs = 0;
+		runs = 0;
+		homeOffense();
+		return;
+	}
+	if (outs < 3){
+		pitch();
+		awayOffense();
+	}
+	else {
+		bases = [false, false, false];
+		outs = 0;
+		inn++
+		awayOffense();
+	};
+};
 
-pitch();
+function homeOffense(){
+
+	if (inn > 9){
+		hruns = runs;
+		gameOver();
+		return;
+	}
+	else if (inn === 9){
+		if (runs > aruns){
+			hruns = runs;
+			gameOver();
+			return;
+		}
+		else {
+			if (outs < 3){
+				pitch();
+				homeOffense();
+			}
+			else {
+				hruns = runs;
+				gameOver();
+				return;
+			};
+		};
+	}
+	else {
+		homeBatting();
+	};
+};
+
+function homeBatting() {
+	if (outs < 3){
+		pitch();
+		homeOffense();
+	}
+	else {
+		bases = [false, false, false];
+		outs = 0;
+		inn++;
+		homeOffense();
+	};
+};
+
+function gameOver(){
+	console.log("Game Over! The home team scored: " + hruns + " and the away team scored: " + aruns);
+	console.log("Inning at end: " + inn);
+	return;
+};
+awayOffense();
+
