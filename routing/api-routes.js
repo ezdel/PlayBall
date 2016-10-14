@@ -3,38 +3,22 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var connection = require('./connection.js');
 var mysql = require('mysql');
-var html;
+var players;
 
 
 module.exports = function(app){
 
 
-app.get('/api/show', function (req, res) {	
-console.log('hit');	
-	var queryString = 'SELECT * FROM master;';
-
-
-var table ='master';
-connection.query(queryString, function (err, res) {
-
-	// html += '<ul>';
-	// 	for (var i = 0; i < res[i].length; i++) {
-	// 		html += '<li><p> Name: ' + res[i].name + '</p>' + ' </li>';
-	// 	}
-
-	// 	html += '</ul>';
-	// if(err) throw err;
-
-html = res;
-
-return html;
-
-	
-});
-
-res.send(html);
-
-})
+app.get('/api/:player?', function (req, res) {	
+	var chosen = req.params.player;
+	var queryString = 'SELECT * FROM Master WHERE nameGiven REGEXP' + "'" + chosen +"'" +";";
+	console.log(queryString);
+		connection.query(queryString, function (err, res) {
+			players = res;
+	});
+	console.log(players);
+	res.send(players);
+	})
 }
 
 
