@@ -1,5 +1,6 @@
 var currentURL = window.location.origin; 
 var team =[]
+var teamFinal;
 var submitTeam;
 $('#playerSearch').keypress(function () {
   $("#results").empty();
@@ -18,27 +19,30 @@ for(i=0;i<res.length;i++){
 //gets value of button 
 $("body").on("click","#player" ,function(){
  var buttonValue = jQuery.parseJSON($(this).val());
- console.log(buttonValue);
+ //console.log(buttonValue);
  team.push({player:buttonValue});
  console.log(team);
    $("#team").empty();
+   $("#teamShow").empty();
  for (i=0; i<team.length; i++){
 	$("#team").append(team[i].player.nameFirst + " "+team[i].player.nameLast + "</br>");
+	$("#teamShow").append(team[i].player.nameFirst + " "+team[i].player.nameLast + "</br>");
 	}
-if(team.length === 1){
+
+
+if(team.length === 2){
 	$('#teamModal').modal('toggle');
+	teamFinal = {team:team}
 }
 
+
+// For some reason this is submitting the array of objects 9 times
 $("#teamSubmit").on("click", function(){
-submitTeam = $(this).val();
-if(submitTeam === "yes"){
-$.post(currentURL + "/api/submit", {team:team}, function(data){
+	console.log(team)
+$.post(currentURL + "/api/submit", teamFinal, function(data){
 	console.log(team);
 	});
-}else{
-	// THIS SHOULD WORK
-	team.splice(0,team.length);
-}
+return false;
 });
 
 
