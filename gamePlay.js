@@ -79,7 +79,7 @@ function out(batter, pitcher){
 	if (soNum < soProb){
 		outs++
 		console.log("STRIKE OUT");
-		pitcher.strikeouts++;
+		batter.strikeouts++;
 	}
 	else {
 		console.log("OUT");
@@ -233,7 +233,9 @@ function homeBatting() {
 function gameOver(){
 	console.log("Game Over! The home team scored: " + hruns + " and the away team scored: " + aruns);
 	console.log("Inning at end: " + inn);
-	console.log(teamA);
+	for (i = 0; i < 9; i++) {
+		console.log(teamA[i].name + " At Bats: " + teamA[i].atbats + " Singles: " + teamA[i].singles + " Doubles: " + teamA[i].doubles + " Triples: " + teamA[i].triples + " Home Runs: " + teamA[i].homeruns + " Strikeouts: " + teamA[i].strikeouts);
+	};
 	return;
 };
 
