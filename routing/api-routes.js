@@ -19,6 +19,14 @@ app.get('/api/:player?', function (req, res) {
 	console.log(players);
 	res.send(players);
 	})
+
+
+app.post("/api/submit",function(req,res){
+	console.log("hello");
+})
+
+
+
 }
 
 

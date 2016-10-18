@@ -1,9 +1,10 @@
 var currentURL = window.location.origin; 
 var team =[]
+var submitTeam;
 $('#playerSearch').keypress(function () {
   $("#results").empty();
 var searchedPlayer = $('#playerSearch').val();
-$.get(currentURL + /api/+ searchedPlayer, function(res){ 
+$.get(currentURL + "/api/"+ searchedPlayer, function(res){ 
 for(i=0;i<res.length;i++){
        var b = $('<button>');
        b.attr("value", JSON.stringify(res[i]));
@@ -24,10 +25,28 @@ $("body").on("click","#player" ,function(){
  for (i=0; i<team.length; i++){
 	$("#team").append(team[i].player.nameFirst + " "+team[i].player.nameLast + "</br>");
 	}
-if(team.length === 9){
-	confirm("Yes or no");
+if(team.length === 1){
+	$('#teamModal').modal('toggle');
 }
+
+$("#teamSubmit").on("click", function(){
+submitTeam = $(this).val();
+if(submitTeam === "yes"){
+	console.log("Post Request");
+$.post(currentURL + "/api/", team, function(data){
+	console.log("SUBMITTED");
+	});
+}else{
+	team.splice(0,team.length);
+}
+});
+
+
+
+
 })
+
+
 
 
 
