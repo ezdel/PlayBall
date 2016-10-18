@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css" media="screen">
+#results{
+	overflow: scroll;
+	width:600px;
+	height:500px;
+	border:solid;
+	border-radius: 15px;
+	float:left;
+}
+
+#playerSearch{
+	width:600px;
+	height:50px;
+	border-radius: 15px;
+	font-size: 25px;
+	margin: 0 auto;
+}	
+
+#team{
+	overflow: scroll;
+	width:130px;
+	height:500px;
+	border:solid;
+	border-radius: 15px;
+	margin: 0 auto;
+	float:left;
+}
+
+</style>
+
 </head>
 <body>
 
@@ -8,15 +38,18 @@
 
 
 
-<input type="text" id="playerSearch">
+<input type="text" id="playerSearch" placeholder="Search By Last Name!">
 <br>
-<button type="submit" class="btn btn-primary btn-md" id="searchBtn">SUBMIT</button>
+<!-- <button type="submit" class="btn btn-primary btn-md" id="searchBtn">SUBMIT</button> -->
 
 </br>
 </br>
 <div id="results">
 </div>
 
+<div id="team">
+
+</div>
 
 </body>
 <script src="https://code.jquery.com/jquery.js"></script>

@@ -1,16 +1,33 @@
 var currentURL = window.location.origin; 
+var team =[]
 $('#playerSearch').keypress(function () {
   $("#results").empty();
 var searchedPlayer = $('#playerSearch').val();
-console.log(searchedPlayer);
 $.get(currentURL + /api/+ searchedPlayer, function(res){ 
-for(i=0;i<500;i++){
-      $("#results").append("<ul>"+"<li>" +"<h3>"+"<button id='player' value="+ res[i].nameGiven+">"+res[i].nameGiven + "</button>" +"</h3>" +"</li>"+ "</ul>");
+for(i=0;i<res.length;i++){
+       var b = $('<button>');
+       b.attr("value", JSON.stringify(res[i]));
+       b.attr("id", "player");
+       b.text(res[i].nameFirst + " " + res[i].nameLast);
+       $("#results").append(b);
+       $("#results").append("</br>");
       }
 });
 })
 //gets value of button 
 $("body").on("click","#player" ,function(){
-  var buttonValue = $(this).val();
-  console.log(buttonValue);
+ var buttonValue = jQuery.parseJSON($(this).val());
+ console.log(buttonValue);
+ team.push({player:buttonValue});
+ console.log(team);
+   $("#team").empty();
+ for (i=0; i<team.length; i++){
+	$("#team").append(team[i].player.nameFirst + " "+team[i].player.nameLast + "</br>");
+	}
+if(team.length === 9){
+	confirm("Yes or no");
+}
 })
+
+
+

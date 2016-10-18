@@ -11,7 +11,7 @@ module.exports = function(app){
 
 app.get('/api/:player?', function (req, res) {	
 	var chosen = req.params.player;
-	var queryString = 'SELECT * FROM Master WHERE nameGiven REGEXP' + "'" + chosen +"'" +";";
+		var queryString = 'SELECT * FROM Master WHERE nameLast REGEXP' + "'" + chosen +"'" + ";";
 	console.log(queryString);
 		connection.query(queryString, function (err, res) {
 			players = res;
