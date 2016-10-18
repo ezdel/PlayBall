@@ -14,9 +14,12 @@ var bases = [false, false, false];
 var batter;
 var pitcher;
 var runs = 0;
+var innruns = 0;
 var aruns = 0;
 var hruns = 0;
 var ord = 0;
+var awaybox = [];
+var homebox = [];
 
 
 function startGame(teamA, teamH){
@@ -92,6 +95,7 @@ function single(){
 		bases[2] = false;
 		bases[0] = true;
 		runs++;
+		innruns++;
 	};
 	if (bases[1] === true){
 		bases[2] = true;
@@ -112,10 +116,12 @@ function double(){
 		bases[2] = false;
 		bases[1] = true;
 		runs++;
+		innruns++;
 	};
 	if (bases[1] === true){
 		bases[1] = true;
 		runs++;
+		innruns++;
 	};
 	if (bases[0] === true){
 		bases[2] = true;
@@ -131,14 +137,17 @@ function triple(){
 	if (bases[2] === true){
 		bases[2] = false;
 		runs++;
+		innruns++;
 	};
 	if (bases[1] === true){
 		bases[1] = false;
 		runs++;
+		innruns++;
 	};
 	if (bases[0] === true){
 		bases[0] = false;
 		runs++;
+		innruns++;
 	};
 	if (bases = [false, false, false]){
 		bases[2] = true;
@@ -149,16 +158,20 @@ function homerun(){
 	if (bases[2] === true){
 		bases[2] = false;
 		runs++;
+		innruns++;
 	};
 	if (bases[1] === true){
 		bases[1] = false;
 		runs++;
+		innruns++;
 	};
 	if (bases[0] === true){
 		bases[0] = false;
 		runs++;
+		innruns++;
 	};
 	runs++;
+	innruns++;
 	return
 }; 
  function awayOffense(teamA, teamH){
@@ -182,6 +195,8 @@ function homerun(){
 		bases = [false, false, false];
 		outs = 0;
 		inn++
+		awaybox.push(innruns);
+		innruns = 0;
 		awayOffense(teamA, teamH);
 	};
 };
@@ -226,15 +241,18 @@ function homeBatting() {
 		bases = [false, false, false];
 		outs = 0;
 		inn++;
+		homebox.push(innruns);
+		innruns = 0;
 		homeOffense(teamA, teamH);
 	};
 };
 
 function gameOver(){
-	console.log("Game Over! The home team scored: " + hruns + " and the away team scored: " + aruns);
+	console.log("Game Over! The home team scored: " + homebox + " for a total of: " + hruns + " and the away team scored: " + awaybox + "for a total of: " + aruns);
 	console.log("Inning at end: " + inn);
 	for (i = 0; i < 9; i++) {
 		console.log(teamA[i].name + " At Bats: " + teamA[i].atbats + " Singles: " + teamA[i].singles + " Doubles: " + teamA[i].doubles + " Triples: " + teamA[i].triples + " Home Runs: " + teamA[i].homeruns + " Strikeouts: " + teamA[i].strikeouts);
+		console.log(teamH[i].name + " At Bats: " + teamH[i].atbats + " Singles: " + teamH[i].singles + " Doubles: " + teamH[i].doubles + " Triples: " + teamH[i].triples + " Home Runs: " + teamH[i].homeruns + " Strikeouts: " + teamH[i].strikeouts);
 	};
 	return;
 };
