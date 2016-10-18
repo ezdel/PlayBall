@@ -32,11 +32,11 @@ if(team.length === 1){
 $("#teamSubmit").on("click", function(){
 submitTeam = $(this).val();
 if(submitTeam === "yes"){
-	console.log("Post Request");
-$.post(currentURL + "/api/", team, function(data){
-	console.log("SUBMITTED");
+$.post(currentURL + "/api/submit", {team:team}, function(data){
+	console.log(team);
 	});
 }else{
+	// THIS SHOULD WORK
 	team.splice(0,team.length);
 }
 });

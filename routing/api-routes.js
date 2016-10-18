@@ -12,17 +12,18 @@ module.exports = function(app){
 app.get('/api/:player?', function (req, res) {	
 	var chosen = req.params.player;
 		var queryString = 'SELECT * FROM Master WHERE nameLast REGEXP' + "'" + chosen +"'" + ";";
-	console.log(queryString);
 		connection.query(queryString, function (err, res) {
 			players = res;
 	});
-	console.log(players);
 	res.send(players);
 	})
 
 
 app.post("/api/submit",function(req,res){
-	console.log("hello");
+	var teamNew = req.body
+	console.log(teamNew.player.playerID);
+	//console.log(teamNew.team[1].player.playerID);
+// ERIC'S GAME LOGIC
 })
 
 
