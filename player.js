@@ -17,6 +17,7 @@ function Player(nameFirst, nameLast, pos, ab, hits, doubles, triples, homeruns, 
 	this.soPctBatter = (batterKs / ab) * 1000,
 	this.baOpp = baOpp * 1000,
 	this.soPctPitcher = (pitcherKs / IPouts) * 1000,
+	this.atbats = 0;
 	this.singles = 0,
 	this.doubles = 0,
 	this.triples = 0,

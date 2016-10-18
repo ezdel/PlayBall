@@ -32,6 +32,7 @@ function pitch(batter, pitcher){
 	var hitprob = (batter.ba + pitcher.baOpp) / 2;
 	hitprob = hitprob.toFixed(3);
 	var ranNum = Math.floor(Math.random() * 1000) + 1;
+	batter.atbats++;
 	if (ranNum < hitprob){
 		hit(batter, pitcher);
 		order();
@@ -52,18 +53,22 @@ function hit(batter, pitcher){
 	var hitNum = Math.floor(Math.random() * 1000) + 1;
 	if (hitNum < batter.singlepct) {
 		console.log("SINGLE");
+		batter.singles++;
 		single();
 	}
 	else if (hitNum < (batter.singlepct + batter.doublepct)) {
 		console.log("DOUBLE");
+		batter.doubles++;
 		double();
 	}
 	else if (hitNum < (batter.singlepct + batter.doublepct + batter.triplepct)) {
 		console.log("TRIPLE");
+		batter.triples++;
 		triple();
 	}
 	else {
 		console.log("HOME RUN")
+		batter.homeruns++;
 		homerun();
 	};
 };
@@ -74,6 +79,7 @@ function out(batter, pitcher){
 	if (soNum < soProb){
 		outs++
 		console.log("STRIKE OUT");
+		pitcher.strikeouts++;
 	}
 	else {
 		console.log("OUT");
@@ -227,6 +233,7 @@ function homeBatting() {
 function gameOver(){
 	console.log("Game Over! The home team scored: " + hruns + " and the away team scored: " + aruns);
 	console.log("Inning at end: " + inn);
+	console.log(teamA);
 	return;
 };
 
