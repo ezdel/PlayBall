@@ -32,7 +32,7 @@ $("body").on("click","#player" ,function(){
 	$("#teamShow").append(team[i].nameFirst + " "+team[i].nameLast + "</br>");
 	}
 
-if(team.length === 3){
+if(team.length === 9){
 	$('#teamModal').modal('toggle');
 	teamFinal = {team:team}
 }
