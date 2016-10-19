@@ -21,18 +21,14 @@ app.get('/api/:player?', function (req, res) {
 
 app.post("/api/submit",function(req,res){
 	var teamNew = req.body
-	console.log(teamNew)
-	console.log(teamNew.team[0].player.playerID);
-	// console.log(teamNew.team[1].player.playerID);
-	// // console.log(teamNew.team[2].player.playerID);
-	// // console.log(teamNew.team[3].player.playerID);
-	// // console.log(teamNew.team[4].player.playerID);
-	// // console.log(teamNew.team[5].player.playerID);
-	// // console.log(teamNew.team[6].player.playerID);
-	// // console.log(teamNew.team[7].player.playerID);
-	// // console.log(teamNew.team[8].player.playerID);
-	// // console.log(teamNew.team[09].player.playerID);
+	console.log(teamNew.team[0].playerID);
+	console.log(teamNew.team[1].playerID);
 // ERIC'S GAME LOGIC
+	// Hey Eric! thanks for the help again! The console logs above this comment are how you will parse through
+	//the array of objects. teamNew.team[0].playerID gets you the first player's ID in the team array and so on.
+	// If you have any questions I'm just a slack away. Also I might be working on adding team data to a table and
+	// I might be using this file as well. I'll just make a copy of this and edit on another file just so you can 
+	// focus on this one. Happy Coding!!
 })
 
 
