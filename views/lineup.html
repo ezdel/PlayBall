@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<title>Play Ball!</title>
+
+<!-- BOOTSTRAP CDN -->
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<!-- JQUERY CDN -->
+
+	<script src="http://code.jquery.com/jquery.js"></script>
+
+<!-- STYLESHEETS -->
+	
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">	
+	<link rel="stylesheet" href="../assets/css/style.css">
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<!-- NAVBAR WITH LOGO -->
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="navbar">
+			<img src="../assets/images/logo.png" alt="logo">
+			</div>
+		</div>
+
+		<div class="row">
+
+			<!-- EMPTY COLUMN -->
+
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+			</div>
+
+			<!-- ENTER YOUR LINEUP -->
+
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<h1>
+					Fill out your line up
+				</h1>
+				<p>
+					Search for players by name and fill in each position on your team. Remember, you have all of baseball history at your disposal!
+				</p>
+				<form action="" method="POST" role="form">
+				
+					<div class="form-group">
+						<input type="text" class="form-control" id="teamName" placeholder="Search by last name">
+					</div>
+				
+					<button type="submit" class="btn">Submit Team</button>
+				</form>
+			</div>
+
+
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+
+			<!-- LINEUP CARD BEGIN-->
+
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" id="lineupCard">
+
+			<!-- LINEUP HEADER -->
+
+			<div id="lineupHeader">
+				<h5 class="positionTitle">Pos.</h5>
+				<h5 class="playerTitle">Player Name</h5>
+				<h5 class="avgTitle">Avg.</h5>
+			</div>
+
+			<!-- RIGHT FIELDER -->
+
+			<div class="lineupBlock">
+				<div class="positionBlock" id="lineupRF">
+					<p class="positionName">RF</p>
+				</div>
+				<div class="verticalLine"></div>
+				<div class="playerBlock">
+					<p class="playerName" id="playerRF">Johnny Baseball</p>
+					<p class="teamName" id="teamRF">1972 San Francisco Giants</p>
+				</div>
+				<div class="statsBlock">
+					<p class="stats" id="statRF">.342</p>
+				</div>
+			</div>
+
+			<!-- LEFT FIELDER -->
+
+			<div class="lineupBlock">
+				<div class="positionBlock" id="lineupLF">
+					<p class="positionName">LF</p>
+				</div>	
+				<div class="verticalLine"></div>
+				<div class="playerBlock">
+					<p class="playerName" id="playerLF">Johnny Baseball</p>
+					<p class="teamName" id="teamRF">1972 San Francisco Giants</p>
+				</div>
+				<div class="statsBlock">
+					<p class="stats" id="statLF">.342</p>
+				</div>
+			</div>
+
+			<!-- CENTER FIELDER -->
+
+			<div class="lineupBlock">
+				<div class="positionBlock" id="lineupCF">
+					<p class="positionName">CF</p>
+				</div>
+				<div class="verticalLine"></div>	
+				<div class="playerBlock">
+					<p class="playerName" id="playerCF">Johnny Baseball</p>
+					<p class="teamName" id="teamRF">1972 San Francisco Giants</p>
+				</div>
+				<div class="statsBlock">
+					<p class="stats" id="statCF">.342</p>
+				</div>
+			</div>
+
+			<!-- FIRST BASEMAN -->
+
+			<div class="lineupBlock">
+				<div class="positionBlock" id="lineup1B">
+					<p class="positionName">1B</p>
+				</div>
+				<div class="verticalLine"></div>	
+				<div class="playerBlock">
+					<p class="playerName" id="player1B">Johnny Baseball</p>
+					<p class="teamName" id="teamRF">1972 San Francisco Giants</p>
+				</div>
+				<div class="statsBlock">
+					<p class="stats" id="stat1B">.342</p>
+				</div>
+			</div>
+
+			<!-- SECOND BASEMAN -->
+
+			<div class="lineupBlock">
+				<div class="positionBlock" id="lineup2B">
+					<p class="positionName">2B</p>
+				</div>
+				<div class="verticalLine"></div>	
+				<div class="playerBlock">
+					<p class="playerName" id="player2B">Johnny Baseball</p>
+					<p class="teamName" id="team2B">1972 San Francisco Giants</p>
+				</div>
+				<div class="statsBlock">
+					<p class="stats" id="stat2B">.342</p>
+				</div>
+			</div>
+
+			<!-- THIRD BASEMAN -->
+
+			<div class="lineupBlock">
+				<div class="positionBlock" id="lineup3B">
+					<p class="positionName">3B</p>
+				</div>
+				<div class="verticalLine"></div>	
+				<div class="playerBlock">
+					<p class="playerName" id="player3B">Johnny Baseball</p>
+					<p class="teamName" id="team3B">1972 San Francisco Giants</p>
+				</div>
+				<div class="statsBlock">
+					<p class="stats" id="stat3B">.342</p>
+				</div>
+			</div>
+
+			<!-- SHORT STOP -->
+
+			<div class="lineupBlock">
+				<div class="positionBlock" id="lineupSS">
+					<p class="positionName">SS</p>
+				</div>
+				<div class="verticalLine"></div>	
+				<div class="playerBlock">
+					<p class="playerName" id="playerSS">Johnny Baseball</p>
+					<p class="teamName" id="teamSS">1972 San Francisco Giants</p>
+				</div>
+				<div class="statsBlock">
+					<p class="stats" id="statSS">.342</p>
+				</div>
+			</div>
+
+			<!-- CATCHER -->
+
+			<div class="lineupBlock">
+				<div class="positionBlock" id="lineupC">
+					<p class="positionName">C</p>
+				</div>
+				<div class="verticalLine"></div>	
+				<div class="playerBlock">
+					<p class="playerName" id="playerC">Johnny Baseball</p>
+					<p class="teamName" id="teamC">1972 San Francisco Giants</p>
+				</div>
+				<div class="statsBlock">
+					<p class="stats" id="statRF">.342</p>
+				</div>
+			</div>
+
+			<!-- PITCHER -->
+
+			<div class="lineupBlock">
+				<div class="positionBlock" id="lineupP">
+					<p class="positionName">P</p>
+				</div>
+				<div class="verticalLine"></div>	
+				<div class="playerBlock">
+					<p class="playerName" id="playerP">Johnny Baseball</p>
+					<p class="teamName" id="teamP">1972 San Francisco Giants</p>
+				</div>
+				<div class="statsBlock">
+					<p class="stats" id="statP">.342</p>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- LINEUP CARD END -->
+
+		<!-- EMPTY COLUMN -->
+
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+			</div>
+
+		</div>
+
+	</div>
+		
+</body>
+
+</html>

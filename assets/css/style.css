@@ -1,0 +1,310 @@
+* {
+	box-sizing: border-box;
+}
+
+.row {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	margin: 0 0 80px 0;
+	padding: 0;
+	width: 100%;
+}
+
+body {
+	background-color: #F8F8F8;
+}
+
+img {
+	display: block;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #CB132F;
+    color: #FFFFFF;
+    font-family: Roboto, sans-serif;
+    padding: 12px 40px;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 3s00;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0px;
+} 
+
+/*TYPOGRAPHY*/
+
+@font-face {
+	font-family: Ahkio;
+	font-weight: Regular;
+	src: url('../assets/fonts/Ahkio-Regular.otf');
+}
+
+h1 {
+	font-size: 36px;
+	font-family: Ahkio, sans-serif;
+	color: #0071BC;
+	letter-spacing: .03em;
+}
+
+p {
+	font-family: 'Roboto';
+	font-weight: 300: 
+	line-height: 1.2;
+	font-size: 17px;
+	line-height: 24px;
+	margin: 0 0 32px 0;
+}
+
+/*NAVBAR AND LOGO*/
+
+#navbar {
+	background-color: #0071BC;
+	height: 96px;
+	margin: 0 0 56px 0;
+	padding: 24px 0 0 48px;
+	box-shadow: 0px 1px 5px #888888;
+}
+
+/*TEXT FIELD*/
+
+.form-control {
+    display: block;
+    margin: 0 0 32px 0;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #9B9B9B;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #0071BC;
+     border-radius: 0px; 
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+     box-shadow: inset 0 1px 1px rgba(0,0,0,.075); 
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+
+/*LINEUP CARD*/
+
+#lineupCard {
+	background-color: #FFFFFF;
+	width: 360px;
+	border: 2px solid #333333;
+	padding: 0;
+    /* min-height: 1px; */
+    /* padding-right: 15px; */
+    /* padding-left: 15px; */
+}
+
+/*LINEUP HEADER */
+
+h5 {
+	font-family: 'Roboto';
+	font-size: 16px;
+	font-weight: 300;
+	display: inline;
+	color: #FFF;
+	letter-spacing: 1px;
+}
+
+#lineupHeader {
+	background-color: #333333;
+	padding: 8px 12px 8px 16px;
+}
+
+.positionTitle {
+	/*margin-right: 30px;*/
+}
+
+.playerTitle {
+	margin-left: 32px;
+}
+
+.avgTitle {
+	margin-left: 118px;
+}
+
+
+/*INDIVIDUAL PLAYER SLOTS*/
+
+.lineupBlock {
+	margin: 0px;
+	height: 48px;
+	box-shadow: 0px 1px 0px #B7B7B7;
+}
+
+/*POSITION*/
+
+.positionBlock {
+	margin: 0px;
+	padding: 12px 8px 8px 16px;
+	width: 62px;
+	height: 48px;
+	float: left;
+}
+
+.positionName {
+	margin: 0;
+	font-family: 'Roboto';
+	font-weight: 300;
+	font-size: 24px;
+	/*display: inline;*/
+	/*text-align: left;*/
+	color: #333;
+}
+
+.verticalLine {
+	background-color: #E74E4E;
+	width: 2px;
+	height: 32px;
+	margin-top: 8px;
+	float: left;
+}
+
+
+/*PLAYER AND TEAM*/
+
+.playerBlock {
+	float: left;
+	margin: 0;
+	padding: 8px 8px 8px 16px;
+	text-align: left;
+	width: 226px;
+	height: 48px;
+}
+
+.playerName {
+	margin: 0 0 2px 0;
+	font-family: 'Roboto';
+	font-weight: 400;
+	font-size: 14px;
+	text-align: left;
+	color: #333;
+	line-height: 18px;
+}
+
+.teamName {
+	margin: 0;
+	font-family: 'Roboto';
+	font-weight: 400;
+	font-size: 12px;
+	text-align: left;
+	color: #B7B7B7;
+	line-height: 12px;
+}
+
+/*BATTING AVERAGE AND ERA*/
+
+.statsBlock {
+	float: left;
+	margin: 0;
+	padding: 12px 8px 8px 8px;
+	text-align: center;
+	width: 64px;
+	height: 48px;
+	-webkit-box-shadow:inset 1px 0 0 0 #b7b7b7;
+	box-shadow:inset 1px 0 0 0 #b7b7b7;
+}
+
+.stats {
+	margin: 0px;
+	font-family: 'Roboto';
+	font-weight: 300;
+	font-size: 24px;
+	color: #333;
+}
+
+
+/*RIVAL TEAM BUTTONS*/
+
+.rivalTeamsdark {
+	width: 226px;
+	height: 32px;
+	background-color: #EEEEEE;
+	box-shadow:1px 1px 1px #b7b7b7;;
+	padding: 8px 0 8px 12px;
+	margin-bottom: 8px;
+}
+
+.rivalTeamslight {
+	width: 226px;
+	height: 32px;
+	background-color: #FFF;
+	box-shadow:1px 1px 1px #b7b7b7;;
+	padding: 8px 0 8px 12px;
+	margin-bottom: 8px;
+}
+
+.rivalName {
+	margin: 0;
+	font-family: 'Roboto';
+	font-weight: 400;
+	font-size: 14px;
+	text-align: left;
+	color: #333;
+	line-height: 14px;
+}
+
+#rivalsRight {
+	padding: 0;
+	margin: 0;
+	width: 226px;
+}
+
+#rivalsLeft {
+	padding: 0;
+	margin: 0 16px 40px 0;
+	width: 226px;
+}
+
+button {
+	align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: #333;
+    background-color: #EEEEEE;
+    box-sizing: border-box;
+    padding: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #DDD;
+    border-image: initial;
+    display: inline-block;
+}
+
+button:active
+{
+	box-shadow: 0 1px 0 #666, 0 2px 0 #444, 0 2px 2px rgba(0,0,0,0.9);
+	-webkit-transform: translateY(3px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
