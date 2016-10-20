@@ -44,6 +44,7 @@ img {
     background-image: none;
     border: 1px solid transparent;
     border-radius: 0px;
+    box-shadow:1px 1px 0px #555;
 } 
 
 /*TYPOGRAPHY*/
@@ -105,7 +106,7 @@ p {
 
 /*LINEUP CARD*/
 
-#lineupCard {
+.lineupCard {
 	background-color: #FFFFFF;
 	width: 360px;
 	border: 2px solid #333333;
@@ -240,7 +241,7 @@ h5 {
 	width: 226px;
 	height: 32px;
 	background-color: #EEEEEE;
-	box-shadow:1px 1px 1px #b7b7b7;;
+	box-shadow:1px 1px 1px #b7b7b7;
 	padding: 8px 0 8px 12px;
 	margin-bottom: 8px;
 }
@@ -249,7 +250,7 @@ h5 {
 	width: 226px;
 	height: 32px;
 	background-color: #FFF;
-	box-shadow:1px 1px 1px #b7b7b7;;
+	box-shadow:1px 1px 1px #b7b7b7;
 	padding: 8px 0 8px 12px;
 	margin-bottom: 8px;
 }
@@ -291,20 +292,57 @@ button {
     display: inline-block;
 }
 
-button:active
-{
-	box-shadow: 0 1px 0 #666, 0 2px 0 #444, 0 2px 2px rgba(0,0,0,0.9);
-	-webkit-transform: translateY(3px);
+button:active {
+	/*box-shadow: 0 1px 0 #666, 0 2px 0 #444, 0 2px 2px rgba(0,0,0,0.9);
+	-webkit-transform: translateY(3px);*/
+	border-color: #EEE;
+	outline: 0 none;
 }
 
+button:focus {
+	outline: 0 none;
+}
 
+.btn:focus, .btn:hover, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+    color: #FFF;
+}
 
+.teamNames {
+	text-align: center;
+	margin: 0 15px 8px 15px;
+	padding: 0;
+	width: 360px;
+}
 
+.addmargin {
+	margin: 0 15px 0 15px;
+}
 
+#vs {
+	padding: 120px 0 24px 0;
+	font-size: 56px;
+	text-align: center;
+}
 
+#scoreboard {
+	background-color: #0E452A;
+}
 
+.innings {
+	display: inline;
+	margin: 0 0 0 0;
+	color: #FFF;
+	font-size: 24px;
+}
 
+.teamScoreboard {
+	color: #FFF;
+	font-size: 24px;
+}
 
-
-
-
+.scores {
+	display: inline;
+	/*margin: 0;*/
+	color: #E11922;
+}

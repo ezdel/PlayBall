@@ -1,23 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 	<meta charset="UTF-8">
-	<title>Playball</title>
-	<!-- Latest compiled and minified CSS & JS -->
+
+	<title>Play Ball!</title>
+
+<!-- BOOTSTRAP CDN -->
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<script src="http://code.jquery.com/jquery.js"></script>
+
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="../assets/css/style.css">
-</head>
-<body>
-	<header>
 
-	</header>
-	<div class="container">
-		<img src="" alt="scoreboard">
-	</div>
+<!-- JQUERY CDN -->
+
+	<script src="http://code.jquery.com/jquery.js"></script>
+
+<!-- STYLESHEETS -->
 	
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">	
+	<link rel="stylesheet" href="../assets/css/style.css">
 
+</head>
+
+<body>
+
+	<div class="container">
+	
+		<!-- NAVBAR WITH LOGO -->
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="navbar">
+			<img src="../assets/images/logo.png" alt="logo">
+			</div>
+		</div>
+				
+		<div class="row">
+
+		<!-- EMPTY COLUMN  -->
+			
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<h1>
+					You Win or Lose! 
+				</h1>
+				<p>
+					That was truly a hard fought game, but your team dug deep and pulled out the win. Play again to see if you can keep the streak alive.
+				</p>
+				<button type="submit" class="btn">Play Again</button>
+			</div>
+
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+
+			<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" id="scoreboard">
+				<div class="row">
+					<div class="col-xs-3 col-sm-3 col-md-3 col-md-3"></div>
+					<div class="col-xs-9 col-sm-9 col-md-9 col-md-9">
+					<h1 class="innings">1</h1>
+					<h1 class="innings">2</h1>
+					<h1 class="innings">3</h1>
+					<h1 class="innings">4</h1>
+					<h1 class="innings">5</h1>
+					<h1 class="innings">6</h1>
+					<h1 class="innings">7</h1>
+					<h1 class="innings">8</h1>
+					<h1 class="innings">9</h1>
+					<h1 class="innings">R</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4 col-sm-4 col-md-4 col-md-4">
+						<h1 class="teamScoreboard">
+						Team Name 1
+						</h1>
+					</div>
+					<div class="col-xs-8 col-sm-8 col-md-8 col-md-8">
+						<h2 class="scores">0</h2>
+						<h2 class="scores">0</h2>
+						<h2 class="scores">0</h2>
+						<h2 class="scores">0</h2>
+						<h2 class="scores">0</h2>
+						<h2 class="scores">0</h2>
+						<h2 class="scores">0</h2>
+						<h2 class="scores">0</h2>
+						<h2 class="scores">0</h2>
+						<h2 class="scores">00</h2>
+					</div>
+
+
+				</div>
+				
+				
+			</div>
+
+
+		</div>
+
+	</div>
 	
 </body>
 </html>
