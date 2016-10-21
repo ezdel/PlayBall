@@ -1,15 +1,42 @@
-var express = require('express');
+// ===============================================================================
+// DEPENDENCIES
+// We need to include the path package to get the correct file path for our html
+// ===============================================================================
 var path = require('path');
 
-module.exports = function(app){
 
-// DIFFERENT JS FILE
-app.get('/', function (req, res) {
-	res.sendFile(path.join(__dirname, '../public/home.html'));
-});
+// ===============================================================================
+// ROUTING
+// ===============================================================================
 
-app.get('/survey.html', function (req, res) {
-	res.sendFile(path.join(__dirname, '../public/survey.html'));
-});
+module.exports = function (app) {
+	// HTML GET Requests
+	// Below code handles when users "visit" a page.
+	// In each of the below cases the user is shown an HTML page of content
+	// ---------------------------------------------------------------------------
 
-}
+	app.get('/', function (req, res) {
+		res.sendFile(path.join(__dirname + '/../public/home.html'));
+	});
+
+	app.get('/lineup', function (req, res) {
+		res.sendFile(path.join(__dirname + '/../public/lineup.html'));
+	});
+
+	app.get('/rival', function (req, res) {
+		res.sendFile(path.join(__dirname + '/../public/rival.html'));
+	});
+
+	app.get('/gameStart', function (req, res) {
+		res.sendFile(path.join(__dirname + '/../public/gameStart.html'));
+	});
+
+	app.get('/scoreboard', function (req, res) {
+		res.sendFile(path.join(__dirname + '/../public/scoreboard.html'));
+	});
+
+	// If no matching route is found default to home
+	app.use(function (req, res) {
+		res.sendFile(path.join(__dirname + '/../public/home.html'));
+	});
+};

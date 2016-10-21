@@ -10,15 +10,42 @@ var players;
 
 module.exports = function(app){
 
+//ADD ADDITONAL FIELD IN THE QUERY BASED ON POSITION
+app.get('/api-nonPitch/:player?/:positionType?', function (req, res) {	
+	 var chosen = req.params.player;
+	 var chosenPosition = req.params.positionType
+	 console.log(chosenPosition);
+	 if(chosenPosition === 'DH'){
 
-app.get('/api/:player?', function (req, res) {	
-	var chosen = req.params.player;
-		var queryString = 'SELECT * FROM Master WHERE nameLast REGEXP' + "'" + chosen +"'" + ";";
+	 	var queryString = 'SELECT * FROM playball_batting WHERE nameLast REGEXP' + "'" + chosen +"'"+";";
+		
+	}else{
+		var queryString = 'SELECT * FROM playball_batting WHERE nameLast REGEXP' + "'" + chosen +"'" +"AND POS = "+"'"+chosenPosition+"'"+";";
+
+
+	}
 		connection.query(queryString, function (err, res) {
 			players = res;
+			console.log(res);
 	});
 	res.send(players);
 	})
+
+// This works when querying from another table
+app.get('/api-Pitch/:player?/:positionType?', function (req, res) {	
+	 var chosen = req.params.player;
+	 var chosenPosition = req.params.positionType
+		var queryString = 'SELECT * FROM playball_pitching WHERE nameLast REGEXP' + "'" + chosen +"'" +"AND P = "+"'"+chosenPosition+"'"+";";
+		console.log(queryString);
+		connection.query(queryString, function (err, res) {
+			players = res;
+			console.log(res);
+	});
+	res.send(players);
+	})
+
+
+
 
 
 app.post("/api/submit",function(req,res){
