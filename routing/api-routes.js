@@ -32,16 +32,16 @@ app.post("/api/submit",function(req,res){
 	// I might be using this file as well. I'll just make a copy of this and edit on another file just so you can 
 	// focus on this one. Happy Coding!!
 	
- // var playerA1 = new Player(teamNew.team[0].nameFirst, teamNew.team[0].nameLast, teamNew.team[0].AB, teamNew.team[0].H, teamNew.team[0].2B, teamNew.team[0].3B, teamNew.team[0].HR, teamNew.team[0].SO);
- // var playerA2 = new Player(teamNew.team[1].nameFirst, teamNew.team[1].nameLast, teamNew.team[1].AB, teamNew.team[1].H, teamNew.team[1].2B, teamNew.team[1].3B, teamNew.team[1].HR, teamNew.team[1].SO);
- // var playerA3 = new Player(teamNew.team[2].nameFirst, teamNew.team[2].nameLast, teamNew.team[2].AB, teamNew.team[2].H, teamNew.team[2].2B, teamNew.team[2].3B, teamNew.team[2].HR, teamNew.team[2].SO);
- // var playerA4 = new Player(teamNew.team[3].nameFirst, teamNew.team[3].nameLast, teamNew.team[3].AB, teamNew.team[3].H, teamNew.team[3].2B, teamNew.team[3].3B, teamNew.team[3].HR, teamNew.team[3].SO);
- // var playerA5 = new Player(teamNew.team[4].nameFirst, teamNew.team[4].nameLast, teamNew.team[4].AB, teamNew.team[4].H, teamNew.team[4].2B, teamNew.team[4].3B, teamNew.team[4].HR, teamNew.team[4].SO);
- // var playerA6 = new Player(teamNew.team[5].nameFirst, teamNew.team[5].nameLast, teamNew.team[5].AB, teamNew.team[5].H, teamNew.team[5].2B, teamNew.team[5].3B, teamNew.team[5].HR, teamNew.team[5].SO);
- // var playerA7 = new Player(teamNew.team[6].nameFirst, teamNew.team[6].nameLast, teamNew.team[6].AB, teamNew.team[6].H, teamNew.team[6].2B, teamNew.team[6].3B, teamNew.team[6].HR, teamNew.team[6].SO);
- // var playerA8 = new Player(teamNew.team[7].nameFirst, teamNew.team[7].nameLast, teamNew.team[7].AB, teamNew.team[7].H, teamNew.team[7].2B, teamNew.team[7].3B, teamNew.team[7].HR, teamNew.team[7].SO);
- // var playerA9 = new Player(teamNew.team[8].nameFirst, teamNew.team[8].nameLast, teamNew.team[8].AB, teamNew.team[8].H, teamNew.team[8].2B, teamNew.team[8].3B, teamNew.team[8].HR, teamNew.team[8].SO);
- // var playerA10 = new Player(teamNew.team[9].nameFirst, teamNew.team[9].nameLast, 0, 0, 0, 0, 0, 0, teamNew.team[0].BAOpp, teamNew.team[0].IPOuts, teamNew.team[0].SO);
+ var playerA1 = new Player(teamNew.team[0].nameFirst, teamNew.team[0].nameLast, teamNew.team[0].AB, teamNew.team[0].H, teamNew.team[0].doubles, teamNew.team[0].triples, teamNew.team[0].HR, teamNew.team[0].SO);
+ var playerA2 = new Player(teamNew.team[1].nameFirst, teamNew.team[1].nameLast, teamNew.team[1].AB, teamNew.team[1].H, teamNew.team[1].doubles, teamNew.team[1].triples, teamNew.team[1].HR, teamNew.team[1].SO);
+ var playerA3 = new Player(teamNew.team[2].nameFirst, teamNew.team[2].nameLast, teamNew.team[2].AB, teamNew.team[2].H, teamNew.team[2].doubles, teamNew.team[2].triples, teamNew.team[2].HR, teamNew.team[2].SO);
+ var playerA4 = new Player(teamNew.team[3].nameFirst, teamNew.team[3].nameLast, teamNew.team[3].AB, teamNew.team[3].H, teamNew.team[3].doubles, teamNew.team[3].triples, teamNew.team[3].HR, teamNew.team[3].SO);
+ var playerA5 = new Player(teamNew.team[4].nameFirst, teamNew.team[4].nameLast, teamNew.team[4].AB, teamNew.team[4].H, teamNew.team[4].doubles, teamNew.team[4].triples, teamNew.team[4].HR, teamNew.team[4].SO);
+ var playerA6 = new Player(teamNew.team[5].nameFirst, teamNew.team[5].nameLast, teamNew.team[5].AB, teamNew.team[5].H, teamNew.team[5].doubles, teamNew.team[5].triples, teamNew.team[5].HR, teamNew.team[5].SO);
+ var playerA7 = new Player(teamNew.team[6].nameFirst, teamNew.team[6].nameLast, teamNew.team[6].AB, teamNew.team[6].H, teamNew.team[6].doubles, teamNew.team[6].triples, teamNew.team[6].HR, teamNew.team[6].SO);
+ var playerA8 = new Player(teamNew.team[7].nameFirst, teamNew.team[7].nameLast, teamNew.team[7].AB, teamNew.team[7].H, teamNew.team[7].doubles, teamNew.team[7].triples, teamNew.team[7].HR, teamNew.team[7].SO);
+ var playerA9 = new Player(teamNew.team[8].nameFirst, teamNew.team[8].nameLast, teamNew.team[8].AB, teamNew.team[8].H, teamNew.team[8].doubles, teamNew.team[8].triples, teamNew.team[8].HR, teamNew.team[8].SO);
+ var playerA10 = new Player(teamNew.team[9].nameFirst, teamNew.team[9].nameLast, 0, 0, 0, 0, 0, 0, teamNew.team[0].BAOpp, teamNew.team[0].IPOuts, teamNew.team[0].SO);
 
  var playerH1 = new Player("Jimmy", "Rollins", "SS", 556, 154, 38, 9, 11, 55);
  var playerH2 = new Player("Shane", "Victorino", "CF", 570, 167, 30, 8, 14, 69);
@@ -55,7 +55,7 @@ app.post("/api/submit",function(req,res){
  var playerH10 = new Player("Cole", "Hamels", "P", 76, 17, 2, 0, 0, 29, .227, 682, 196);
 
 
- //var teamA = [playerA1, playerA2, playerA3, playerA4, playerA5, playerA6, playerA7, playerA8, playerA9];
+ var teamA = [playerA1, playerA2, playerA3, playerA4, playerA5, playerA6, playerA7, playerA8, playerA9];
  var teamH = [playerH1, playerH2, playerH3, playerH4, playerH5, playerH6, playerH7, playerH8, playerH9];
  console.log(teamA);
 });
