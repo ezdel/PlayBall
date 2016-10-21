@@ -77,45 +77,48 @@ $("body").on("click","#player" ,function(e){
  //auth part
 var positionCurrent = buttonValue.POS;
 console.log(positionCurrent);
- if(positionCurrent === 'OF'){
- 	team[0] = buttonValue;
- 	team[1] = buttonValue;
- 	team[2] = buttonValue;
- 	console.log(team);
- }else if (positionCurrent === '1B'){
- 	team[3] = buttonValue;
- 		console.log(team);
- }else if (positionCurrent === '2B'){
- 	team[4] = buttonValue;
- 		console.log(team);
- }else if (positionCurrent === '3B'){
- 	team[5] = buttonValue;
- 		console.log(team);
- }else if (positionCurrent === 'SS'){
- 	team[6] = buttonValue;
- 		console.log(team);
- }else if (positionCurrent === 'C'){
- 	team[7] = buttonValue;
- 		console.log(team);
- }else if (positionCurrent === 'P'){
- 	team[8] = buttonValue;
- 		console.log(team);
- }
+ team.push(buttonValue);
+
+console.log(team);
+ // if(positionCurrent === 'OF'){
+ // 	team[0] = buttonValue;
+ // 	team[1] = buttonValue;
+ // 	team[2] = buttonValue;
+ // 	console.log(team);
+ // }else if (positionCurrent === '1B'){
+ // 	team[3] = buttonValue;
+ // 		console.log(team);
+ // }else if (positionCurrent === '2B'){
+ // 	team[4] = buttonValue;
+ // 		console.log(team);
+ // }else if (positionCurrent === '3B'){
+ // 	team[5] = buttonValue;
+ // 		console.log(team);
+ // }else if (positionCurrent === 'SS'){
+ // 	team[6] = buttonValue;
+ // 		console.log(team);
+ // }else if (positionCurrent === 'C'){
+ // 	team[7] = buttonValue;
+ // 		console.log(team);
+ // }else if (positionCurrent === 'P'){
+ // 	team[8] = buttonValue;
+ // 		console.log(team);
+ // }
    $("#team").empty();
 
 
 
 //FIGURE THIS OUT
 $("#submitPlayer").on('click',function(){
-for(var i=0;i<team.length; i++){
-if(team[i] != undefined && team.length === 9){
+// for(var i=0;i<team.length; i++){
+// if(team[i] != undefined && team.length === 9){
 	window.location = '/rival';
 	teamFinal = {team:team}
 	$.post(currentURL + "/api/submit", teamFinal, function(data){
 	 console.log("submitted");
 	});
-	}
- }
+	//}
+ 
 });
 
 // Think of how to make it show in results array

@@ -6,7 +6,7 @@
 
 // runners on base will always move up the same number of bases as the hit
 // no double plays, sacrifices or stolen bases in this version
-// var Player = require("./player.js");
+//var Player = require("./player.js");
 
 var inn = 1;
 var outs = 0;
@@ -282,8 +282,8 @@ function gameOver(){
 
 
 
- // var teamA = [playerA1, playerA2, playerA3, playerA4, playerA5, playerA6, playerA7, playerA8, playerA9];
- // var teamH = [playerH1, playerH2, playerH3, playerH4, playerH5, playerH6, playerH7, playerH8, playerH9];
+ // var teamA = [playerA1, playerA2, playerA3, playerA4, playerA5, playerA6, playerA7, playerA8, playerA9, playerA10];
+ // var teamH = [playerH1, playerH2, playerH3, playerH4, playerH5, playerH6, playerH7, playerH8, playerH9, playerH10];
 
 startGame(teamA, teamH);
 
