@@ -12,16 +12,17 @@ module.exports = function(app){
 app.get('/api-nonPitch/:player?/:positionType?', function (req, res) {	
 	 var chosen = req.params.player;
 	 var chosenPosition = req.params.positionType
-	 if(chosenPosition){
-		var queryString = 'SELECT * FROM baseball_table WHERE nameLast REGEXP' + "'" + chosen +"'" +"AND POS = "+"'"+chosenPosition+"'"+";";
+	 console.log(chosenPosition);
+	 if(chosenPosition === 'DH'){
+	 	var queryString = 'SELECT * FROM baseball_table WHERE nameLast REGEXP' + "'" + chosen +"'"+";";
+		
 	}else{
-			var queryString = 'SELECT * FROM baseball_table WHERE nameLast REGEXP' + "'" + chosen +"'"+";";
+		var queryString = 'SELECT * FROM baseball_table WHERE nameLast REGEXP' + "'" + chosen +"'" +"AND POS = "+"'"+chosenPosition+"'"+";";
 
 	}
-		console.log(queryString);
 		connection.query(queryString, function (err, res) {
 			players = res;
-			//console.log(res);
+			console.log(res);
 	});
 	res.send(players);
 	})
@@ -34,7 +35,7 @@ app.get('/api-Pitch/:player?/:positionType?', function (req, res) {
 		console.log(queryString);
 		connection.query(queryString, function (err, res) {
 			players = res;
-			//console.log(res);
+			console.log(res);
 	});
 	res.send(players);
 	})
