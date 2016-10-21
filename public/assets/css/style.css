@@ -8,7 +8,7 @@
 }
 
 .container {
-	margin: 0;
+	margin: 0 0 80px 0;
 	padding: 0;
 	width: 100%;
 }
@@ -44,6 +44,7 @@ img {
     background-image: none;
     border: 1px solid transparent;
     border-radius: 0px;
+    box-shadow:1px 1px 0px #555;
 } 
 
 /*TYPOGRAPHY*/
@@ -87,7 +88,7 @@ p {
     margin: 0 0 32px 0;
     width: 100%;
     height: 34px;
-    padding: 20px 12px;
+    padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
     color: #9B9B9B;
@@ -105,7 +106,7 @@ p {
 
 /*LINEUP CARD*/
 
-#lineupCard {
+.lineupCard {
 	background-color: #FFFFFF;
 	width: 360px;
 	border: 2px solid #333333;
@@ -126,7 +127,7 @@ h5 {
 	letter-spacing: 1px;
 }
 
-#lineupHeader {
+.lineupHeader {
 	background-color: #333333;
 	padding: 8px 12px 8px 16px;
 }
@@ -234,26 +235,115 @@ h5 {
 }
 
 
-#playballBtn{
-	margin-left: 72px;
-	margin-top: 20px;
+/*RIVAL TEAM BUTTONS*/
+
+.rivalTeamsdark {
+	width: 226px;
+	height: 32px;
+	background-color: #EEEEEE;
+	box-shadow:1px 1px 1px #b7b7b7;
+	padding: 8px 0 8px 12px;
+	margin-bottom: 8px;
 }
 
-
-
-.panel{
-	border-radius:0px;
-	margin-top:30px;
-	border:2px solid;
-	overflow:scroll;
-	height:230px;
-
+.rivalTeamslight {
+	width: 226px;
+	height: 32px;
+	background-color: #FFF;
+	box-shadow:1px 1px 1px #b7b7b7;
+	padding: 8px 0 8px 12px;
+	margin-bottom: 8px;
 }
 
-.btn-primary{
-	margin:10px;
-	border:none !IMPORTANT;
-	padding:20px;
-	width:100px;
+.rivalName {
+	margin: 0;
+	font-family: 'Roboto';
+	font-weight: 400;
+	font-size: 14px;
+	text-align: left;
+	color: #333;
+	line-height: 14px;
 }
 
+#rivalsRight {
+	padding: 0;
+	margin: 0;
+	width: 226px;
+}
+
+#rivalsLeft {
+	padding: 0;
+	margin: 0 16px 40px 0;
+	width: 226px;
+}
+
+button {
+	align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: #333;
+    background-color: #EEEEEE;
+    box-sizing: border-box;
+    padding: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #DDD;
+    border-image: initial;
+    display: inline-block;
+}
+
+button:active {
+	/*box-shadow: 0 1px 0 #666, 0 2px 0 #444, 0 2px 2px rgba(0,0,0,0.9);
+	-webkit-transform: translateY(3px);*/
+	border-color: #EEE;
+	outline: 0 none;
+}
+
+button:focus {
+	outline: 0 none;
+}
+
+.btn:focus, .btn:hover, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+    color: #FFF;
+}
+
+.teamNames {
+	text-align: center;
+	margin: 0 15px 8px 15px;
+	padding: 0;
+	width: 360px;
+}
+
+.addmargin {
+	margin: 0 15px 0 15px;
+}
+
+#vs {
+	padding: 120px 0 24px 0;
+	font-size: 56px;
+	text-align: center;
+}
+
+#scoreboard {
+	background-color: #0E452A;
+}
+
+.innings {
+	display: inline;
+	margin: 0 0 0 0;
+	color: #FFF;
+	font-size: 24px;
+}
+
+.teamScoreboard {
+	color: #FFF;
+	font-size: 24px;
+	text-align: right;
+}
+
+.scores {
+	display: inline;
+	/*margin: 0;*/
+	color: #E11922;
+}
