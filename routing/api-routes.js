@@ -33,7 +33,7 @@ app.get('/api-nonPitch/:player?/:positionType?', function (req, res) {
 app.get('/api-Pitch/:player?/:positionType?', function (req, res) {	
 	 var chosen = req.params.player;
 	 var chosenPosition = req.params.positionType
-		var queryString = 'SELECT * FROM playball_pitching WHERE nameLast REGEXP' + "'" + chosen +"'" +"AND P = "+"'"+chosenPosition+"'"+";";
+		var queryString = 'SELECT * FROM playball_pitching WHERE nameLast REGEXP' + "'" + chosen +"'" +"AND POS = "+"'"+chosenPosition+"'"+";";
 		console.log(queryString);
 		connection.query(queryString, function (err, res) {
 			players = res;

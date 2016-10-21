@@ -13,7 +13,7 @@
 
 <!-- JQUERY CDN -->
 
-	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
 	
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
@@ -54,28 +54,28 @@
 				<p>
 					Search for players by name and fill in each position on your team. Remember, you have all of baseball history at your disposal!
 				</p>
-				<form action="" method="POST" role="form">
+				<form action="" method="" role="form">
 				
 					<div class="form-group">
 
 
 						<select id="positionType">
-  							<option value="C"> C </option>
- 						    <option value="1B"> 1B </option>
-  							<option value="2B"> 2B </option>
+  							<option value="OF">RF</option>
+ 						    <option value="OF">LF</option>
+  							<option value="OF">CF</option>
+ 							<option value="1B">1B</option>
+ 							<option value="2B">2B</option>
  							<option value="3B">3B</option>
  							<option value="SS">SS</option>
- 							<option value="OF">LF</option>
- 							<option value="OF">RF</option>
- 							<option value="OF">CF</option>
- 							<option value="DH">DH</option>
+ 							<option value="C">C</option>
  							<option value="P">P</option>
+ 							<option value="DH">DH</option>
 						</select>
 
 						<input type="text" class="form-control" id="playerName" placeholder="Search Player by Last Name">
 					</div>
 				
-				<button type="submit" id="submitPlayer" class="btn btn-lg btn-danger ">Submit Team</button>
+				<button type="submit" id="submitTeam" class="btn btn-lg btn-danger ">Submit Team</button>
 				</form>
 					<div class="panel panel-default">
 						<div class="panel-body" id="results">
