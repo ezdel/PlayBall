@@ -5,7 +5,7 @@ var connection;
 	port: 3306,
 	host: 'localhost',
 	user: 'root',
-	password: 'UCLAmySQL',
+	password: '',
 	database: 'stats'
 })
 
