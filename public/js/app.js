@@ -9,7 +9,7 @@ var playersName;
 
 // ---HOME---
 
-$('#submitTeam').on('click', function(e){
+$('#submitTeamName').on('click', function(e){
 			e.preventDefault();
 			teamsName = $('#teamName').val().trim();
 				console.log(teamsName);
@@ -106,16 +106,16 @@ console.log(positionCurrent);
 
 
 //FIGURE THIS OUT
-$("#submitPlayer").on('click',function(){
-for(var i=0;i<team.length; i++){
-if(team[i] != undefined && team.length === 9){
+$("#submitTeam").on('click',function(){
+// for(var i=0;i<team.length; i++){
+// if(team[i] != undefined && team.length === 9){
 	window.location = '/rival';
 	teamFinal = {team:team}
 	$.post(currentURL + "/api/submit", teamFinal, function(data){
 	 console.log("submitted");
 	});
-	}
- }
+	//}
+ //}
 });
 
 // Think of how to make it show in results array
