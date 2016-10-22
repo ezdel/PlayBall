@@ -5,8 +5,8 @@ var connection;
 	port: 3306,
 	host: 'localhost',
 	user: 'root',
-	password: 'UCLAmySQL',
-	database: 'stats'
+	password: 'Bor77scht',
+	database: 'playball_db'
 })
 
 
