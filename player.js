@@ -18,10 +18,10 @@ function Player(nameFirst, nameLast, pos, ab, hits, doubles, triples, homeruns, 
 	this.baOpp = baOpp * 1000,
 	this.soPctPitcher = (pitcherKs / IPouts) * 1000,
 	this.atbats = 0,
-	this.singles = 0,
-	this.doubles = 0,
-	this.triples = 0,
-	this.homeruns = 0,
+	this.sgls = 0,
+	this.dbls = 0,
+	this.trpls = 0,
+	this.hrs = 0,
 	this.strikeouts = 0
 };
 

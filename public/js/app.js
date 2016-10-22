@@ -108,18 +108,7 @@ console.log(team);
 
 
 
-//FIGURE THIS OUT
-$("#submitPlayer").on('click',function(){
-// for(var i=0;i<team.length; i++){
-// if(team[i] != undefined && team.length === 9){
-	window.location = '/rival';
-	teamFinal = {team:team}
-	$.post(currentURL + "/api/submit", teamFinal, function(data){
-	 console.log("submitted");
-	});
-	//}
- 
-});
+
 
 // Think of how to make it show in results array
 
@@ -135,7 +124,18 @@ $("#submitPlayer").on('click',function(){
 
 })
 
-
+//FIGURE THIS OUT
+$("#submitPlayer").on('click',function(){
+// for(var i=0;i<team.length; i++){
+// if(team[i] != undefined && team.length === 9){
+	window.location = '/rival';
+	teamFinal = {team:team}
+	$.post(currentURL + "/api/submit", teamFinal, function(data){
+	 console.log("submitted");
+	});
+	//}
+ 
+});
 
 
 	
