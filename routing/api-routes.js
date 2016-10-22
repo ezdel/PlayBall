@@ -49,8 +49,7 @@ app.get('/api-Pitch/:player?/:positionType?', function (req, res) {
 
 app.post("/api/submit",function(req,res){
 	var teamNew = req.body;
-	// console.log(teamNew.team[0].playerID);
-	// console.log(teamNew.team[1].playerID);
+	console.log(teamNew.teamName)
 // ERIC'S GAME LOGIC
 	// Hey Eric! thanks for the help again! The console logs above this comment are how you will parse through
 	//the array of objects. teamNew.team[0].playerID gets you the first player's ID in the team array and so on.
@@ -83,7 +82,7 @@ app.post("/api/submit",function(req,res){
 
  var playerA1 = new Player(teamNew.team[0].nameFirst, teamNew.team[0].nameLast, teamNew.team[0].AB, teamNew.team[0].H, teamNew.team[0].doubles, teamNew.team[0].triples, teamNew.team[0].HR, teamNew.team[0].SO);
  var playerA2 = new Player(teamNew.team[1].nameFirst, teamNew.team[1].nameLast, teamNew.team[1].AB, teamNew.team[1].H, teamNew.team[1].doubles, teamNew.team[1].triples, teamNew.team[1].HR, teamNew.team[1].SO);
-  var playerA3 = new Player(teamNew.team[2].nameFirst, teamNew.team[2].nameLast, teamNew.team[2].AB, teamNew.team[2].H, teamNew.team[2].doubles, teamNew.team[2].triples, teamNew.team[2].HR, teamNew.team[2].SO);
+ var playerA3 = new Player(teamNew.team[2].nameFirst, teamNew.team[2].nameLast, teamNew.team[2].AB, teamNew.team[2].H, teamNew.team[2].doubles, teamNew.team[2].triples, teamNew.team[2].HR, teamNew.team[2].SO);
  var playerA4 = new Player(teamNew.team[3].nameFirst, teamNew.team[3].nameLast, teamNew.team[3].AB, teamNew.team[3].H, teamNew.team[3].doubles, teamNew.team[3].triples, teamNew.team[3].HR, teamNew.team[3].SO);
  var playerA5 = new Player(teamNew.team[4].nameFirst, teamNew.team[4].nameLast, teamNew.team[4].AB, teamNew.team[4].H, teamNew.team[4].doubles, teamNew.team[4].triples, teamNew.team[4].HR, teamNew.team[4].SO);
  var playerA6 = new Player(teamNew.team[5].nameFirst, teamNew.team[5].nameLast, teamNew.team[5].AB, teamNew.team[5].H, teamNew.team[5].doubles, teamNew.team[5].triples, teamNew.team[5].HR, teamNew.team[5].SO);
@@ -94,7 +93,12 @@ app.post("/api/submit",function(req,res){
 
 var teamA = [playerA1, playerA2, playerA3, playerA4, playerA5, playerA6, playerA7, playerA8, playerA9];
 
-console.log(teamA);
+console.log(teamA[0].name);
+console.log(teamA[1].name);
+console.log(teamA[2].name);
+console.log(teamA[3].name);
+console.log(teamA[4].name);
+
 
 })
 

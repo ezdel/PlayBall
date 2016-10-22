@@ -4,14 +4,14 @@ var teamFinal;
 var submitTeam;
 var teamsName;
 var playersName;
-
+var counter = 0;
 
 
 // ---HOME---
 
-$('#submitTeamName').on('click', function(e){
+$('#submitHomeTeam').on('click', function(e){
 			e.preventDefault();
-			teamsName = $('#teamName').val().trim();
+			teamsName = $('#teamName').val();
 				console.log(teamsName);
 				localStorage.setItem("team", teamsName);
 			$('#teamName').val('');
@@ -28,7 +28,7 @@ if(positionType === 'C' ||positionType === '1B'|| positionType === '2B' || posit
 	positionType === 'OF' || positionType === 'CF'|| positionType === 'DH'){
 
 var searchedPlayer = $('#playerName').val();
-					  
+console.log(searchedPlayer);					  
 $.get(currentURL + "/api-nonPitch/"+ searchedPlayer +"/" + positionType, function(res){ 
 for(i=0;i<res.length;i++){
        var b = $('<button>');
@@ -74,13 +74,21 @@ for(i=0;i<res.length;i++){
 $("body").on("click","#player" ,function(e){
  e.preventDefault();
  var buttonValue = jQuery.parseJSON($(this).val());
- //auth part
+ // auth part
+ // team.push(buttonValue);
 var positionCurrent = buttonValue.POS;
 console.log(positionCurrent);
- if(positionCurrent === 'OF'){
+ if(positionCurrent === 'OF' && counter === 0){
  	team[0] = buttonValue;
+ 	counter ++;
+ 	console.log(team);
+ }else if(positionCurrent === 'OF' && counter === 1){
  	team[1] = buttonValue;
+ 	counter ++;
+ 	console.log(team);
+ }else if(positionCurrent === 'OF' && counter === 2){ 	
  	team[2] = buttonValue;
+ 	counter ++;
  	console.log(team);
  }else if (positionCurrent === '1B'){
  	team[3] = buttonValue;
@@ -100,39 +108,33 @@ console.log(positionCurrent);
  }else if (positionCurrent === 'P'){
  	team[8] = buttonValue;
  		console.log(team);
+ }else if(counter >= 3 && team.length === 9){
+ 	team[9] = buttonValue;
+ 	console.log(team);
  }
+
    $("#team").empty();
+ teamsName = localStorage.getItem('team');
+ console.log(team);
+
+})
 
 
 
-//FIGURE THIS OUT
-$("#submitTeam").on('click',function(){
+//PUT THIS OUTSIDE $BODY FUNCTION
+$("#submitTeam").on('click',function(e){
+	 e.preventDefault();
 // for(var i=0;i<team.length; i++){
 // if(team[i] != undefined && team.length === 9){
 	window.location = '/rival';
-	teamFinal = {team:team}
+	teamFinal = {teamName: teamsName,
+				 team:team}
 	$.post(currentURL + "/api/submit", teamFinal, function(data){
 	 console.log("submitted");
 	});
 	//}
  //}
 });
-
-// Think of how to make it show in results array
-
- // for(i=0; i<team.length; i++){
-	// $("#team").append(team[i].nameFirst + " "+team[i].nameLast + "</br>");
-	// $("#teamShow").append(team[i].nameFirst + " "+team[i].nameLast + "</br>");
-	// }
-
-
-
-
- teamsName = localStorage.getItem('team');
-
-})
-
-
 
 
 	
