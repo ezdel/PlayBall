@@ -2,7 +2,7 @@
 // (batters batting average + pitchers batting average against) divided by 2 = probability of hit
 // then each player will have their own probability of what type of hit based on their percentage of
 // singles, doubles, triples and home runs from the season being used
-// if it is an out, the pitchers strike out percentage will determine if it's a strike out
+// if it is an out, the pitchers strike out percentage will determinesif it's a strike out
 
 // runners on base will always move up the same number of bases as the hit
 // no double plays, sacrifices or stolen bases in this version

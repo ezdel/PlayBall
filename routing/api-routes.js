@@ -17,7 +17,7 @@ app.get('/api-nonPitch/:player?/:positionType?', function (req, res) {
 	 var chosenPosition = req.params.positionType
 	 console.log(chosenPosition);
 	 if(chosenPosition === 'DH'){
-	 	var queryString = 'SELECT * FROM playball_batting WHERE nameLast REGEXP' + "'" + chosen +"'"+";";
+	 	var queryString = 'SELECT * FROM playball_batting WHERE nameLast REGEXP' + "'" + chosen +"'" +"AND POS = 'OF';";
 		
 	}else{
 		var queryString = 'SELECT * FROM playball_batting WHERE nameLast REGEXP' + "'" + chosen +"'" +"AND POS = "+"'"+chosenPosition+"'"+";";
