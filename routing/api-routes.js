@@ -53,6 +53,15 @@ app.get('/api-Pitch/:player?/:positionType?', function (req, res) {
 
 
 
+// ------ACCESS RIVAL PAGE------
+	app.get('/api/opponent', function(req, res){
+	     res.json(opponentData);
+	});
+	app.post('/api/opponent', function(req, res){
+			opponentData.push(req.body);
+	});
+
+
 
 
 app.post("/api/submit",function(req,res){
@@ -66,17 +75,8 @@ app.post("/api/submit",function(req,res){
 	// I might be using this file as well. I'll just make a copy of this and edit on another file just so you can 
 	// focus on this one. Happy Coding!!
 
-})
 
-// ------ACCESS RIVAL PAGE------
-	app.get('/api/opponent', function(req, res){
-	     res.json(opponentData);
-	});
-	app.post('/api/opponent', function(req, res){
-			opponentData.push(req.body);
-	});
 
-}
 
 	
  var playerH1 = new Player(teamNew.team[0].nameFirst, teamNew.team[0].nameLast, teamNew.team[0].POS, parseInt(teamNew.team[0].AB), parseInt(teamNew.team[0].H), parseInt(teamNew.team[0].doubles), parseInt(teamNew.team[0].triples), parseInt(teamNew.team[0].HR), parseInt(teamNew.team[0].SO));
@@ -111,15 +111,18 @@ teamA = [playerA1, playerA2, playerA3, playerA4, playerA5, playerA6, playerA7, p
 console.log(teamA);
 awayTeam(teamA);
 
+});
 
-function homeTeam(teamH){
-	return teamH;
 };
-function awayTeam(teamA){
-	return teamA;
-};
-exports.homeTeam = homeTeam;
-exports.awayTeam = awayTeam;
 
+
+// function homeTeam(teamH){
+// 	return teamH;
+// };
+// function awayTeam(teamA){
+// 	return teamA;
+// };
+// exports.homeTeam = homeTeam;
+// exports.awayTeam = awayTeam;
 
 
