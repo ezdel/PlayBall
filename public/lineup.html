@@ -34,7 +34,7 @@
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="navbar">
-			<img src="assets/images/logo.png" alt="logo">
+			<img src="assets/images/logo.svg" alt="logo">
 			</div>
 		</div>
 
@@ -54,34 +54,38 @@
 				<p>
 					Search for players by name and fill in each position on your team. Remember, you have all of baseball history at your disposal!
 				</p>
-				<form action="" method="POST" role="form">
-				
+				<form action="" method="" role="form">
+
+				<div class="row">
 					<div class="form-group">
-
-
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" id="positionDropdown">
 						<select id="positionType">
-  							<option value="C"> C </option>
- 						    <option value="1B"> 1B </option>
-  							<option value="2B"> 2B </option>
+  							<option value="OF">RF</option>
+ 						    <option value="OF">LF</option>
+  							<option value="OF">CF</option>
+ 							<option value="1B">1B</option>
+ 							<option value="2B">2B</option>
  							<option value="3B">3B</option>
  							<option value="SS">SS</option>
- 							<option value="OF">LF</option>
- 							<option value="OF">RF</option>
- 							<option value="OF">CF</option>
- 							<option value="DH">DH</option>
+ 							<option value="C">C</option>
  							<option value="P">P</option>
+ 							<option value="DH">DH</option>
 						</select>
-
+						</div>
+						<div class="col-xs-10 col-sm-10 col-md-10 1col-lg-10" id="searchBar">
 						<input type="text" class="form-control" id="playerName" placeholder="Search Player by Last Name">
+						</div>
 					</div>
-				
-				<button type="submit" id="submitPlayer" class="btn btn-lg btn-danger ">Submit Team</button>
-				</form>
+				</div>
+
 					<div class="panel panel-default">
 						<div class="panel-body" id="results">
 						<!-- Dynamically add this -->
 						</div>
 					</div>
+					<button type="submit" id="submitTeam" class="btn btn-lg">Submit Team</button>
+				</form>
+					
 			</div>
 
 
@@ -123,11 +127,11 @@
 				</div>	
 				<div class="verticalLine"></div>
 				<div class="playerBlock">
-					<p class="playerName" id="playerLF">Johnny Baseball</p>
-					<p class="teamName" id="teamRF">1972 San Francisco Giants</p>
+					<p class="playerName" id="playerLF"></p>
+					<p class="teamName" id="teamRF"></p>
 				</div>
 				<div class="statsBlock">
-					<p class="stats" id="statLF">.342</p>
+					<p class="stats" id="statLF"></p>
 				</div>
 			</div>
 
@@ -260,3 +264,6 @@
 
 
 </html>
+
+
+
