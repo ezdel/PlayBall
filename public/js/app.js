@@ -137,7 +137,7 @@ console.log(positionCurrent);
  		$("#statP").html('.' + pitcherBAOpp);
  		console.log(team);
  } 
- if (team.length === 9){
+ if (positionCurrent != 'P' && positionCurrent === 'OF' && team.length === 9 ){
  	team[9] = buttonValue;
  	console.log('You\'re DH player is ' + buttonValue.nameFirst + ' ' + buttonValue.nameLast);
  	localStorage.setItem("homeTeam", JSON.stringify(team));
@@ -146,69 +146,89 @@ console.log(positionCurrent);
 });
 
 
-$("#submitTeam").on('click',function(){
-if (team.length === 10) {
-	window.location = '/rival';
-} else {
-	alert('You still have to choose more players!');
-}
+$("#submitTeam").on('click',function(e){
+    e.preventDefault();
+    if (team.length === 10) {
+        window.location = '/rival';
+    teamFinal = {teamName: teamsName,
+                 team:team}
+    $.post(currentURL + "/api/submit", teamFinal, function(data){
+     console.log("submitted");
+    });
+    } 
+    return false;
 });
-
-
-// $("#submitPlayer").on('click',function(){
-// for(var i=0;i<team.length; i++){
-// if(team[i] != undefined && team.length === 9){
-// 	window.location = '/rival';
-// 	teamFinal = {team:team}
-// 	$.post(currentURL + "/api/submit", teamFinal, function(data){
-// 	 console.log("submitted");
-// 	});
-// 	}
-//  }
-// });
-
-// Think of how to make it show in results array
-
- // for(i=0; i<team.length; i++){
-	// $("#team").append(team[i].nameFirst + " "+team[i].nameLast + "</br>");
-	// $("#teamShow").append(team[i].nameFirst + " "+team[i].nameLast + "</br>");
-	// }
-
 
 
 
  teamsName = localStorage.getItem('team');
+var oppArr;
+$('#2016indians').on('click', function(){
+    
+    $.get(currentURL + "/api/opponent", function(data){
+          oppArr = data[0];
+            console.log(oppArr);
+            $('#playerRFrival').html(oppArr[6].nameFirst + ' ').append(oppArr[6].nameLast);
+            var statRFrival = Math.round(1000 * (oppArr[6].H / oppArr[6].AB));
+            statRFrival = '.'+ statRFrival;
+            $('#statRFrival').html(statRFrival);
 
-// })
+             $('#playerLFrival').html(oppArr[5].nameFirst + ' ').append(oppArr[5].nameLast);
+            var statLFrival = Math.round(1000 * (oppArr[5].H / oppArr[5].AB));
+            statLFrival = '.'+ statLFrival;
+            $('#statLFrival').html(statLFrival);
 
+            $('#playerCFrival').html(oppArr[7].nameFirst + ' ').append(oppArr[7].nameLast);
+            var statCFrival = Math.round(1000 * (oppArr[7].H / oppArr[7].AB));
+            statCFrival = '.'+ statCFrival;
+            $('#statCFrival').html(statCFrival);
 
+            $('#player1Brival').html(oppArr[1].nameFirst + ' ').append(oppArr[1].nameLast);
+            var stat1Brival = Math.round(1000 * (oppArr[1].H / oppArr[1].AB));
+            stat1Brival = '.'+ stat1Brival;
+            $('#stat1Brival').html(stat1Brival);
 
+             $('#player2Brival').html(oppArr[2].nameFirst + ' ').append(oppArr[2].nameLast);
+            var stat2Brival = Math.round(1000 * (oppArr[2].H / oppArr[2].AB));
+            stat2Brival = '.'+ stat2Brival;
+            $('#stat2Brival').html(stat2Brival);
 
-	
-	
-		
-   //      $('#submitPlayer').on('click', function(e){
-			// e.preventDefault();
-			// playersName = $('#playerName').val().trim();
-			// 	console.log(playersName);
+             $('#player3Brival').html(oppArr[3].nameFirst + ' ').append(oppArr[3].nameLast);
+            var stat3Brival = Math.round(1000 * (oppArr[3].H / oppArr[3].AB));
+            stat3Brival = '.'+ stat3Brival;
+            $('#stat3Brival').html(stat3Brival);
 
-				
-			// 		$('#playerName').val('');
-			// 		$("#playerRF").html(playersName);
-			// 		teamsName = localStorage.getItem('team');
-			// 		console.log(teamsName);
-			// 		$("#teamRF").html(teamsName);
+             $('#playerSSrival').html(oppArr[4].nameFirst + ' ').append(oppArr[4].nameLast);
+            var statSSrival = Math.round(1000 * (oppArr[4].H / oppArr[4].AB));
+            statSSrival = '.'+ statSSrival;
+            $('#statSSrival').html(statSSrival);
 
-			// 		teamArray.push(playersName);
+            $('#playerCrival').html(oppArr[7].nameFirst + ' ').append(oppArr[7].nameLast);
+            var statCrival = Math.round(1000 * (oppArr[7].H / oppArr[7].AB));
+            statCrival = '.'+ statCrival;
+            $('#statCrival').html(statCrival);
 
-			// 		if (teamArray.length == 9){
-			// 			$('#submitPlayer').on('click', function(e){
-			// 				window.location = '/rival';
-			// 			});
-			// 		}
-			
-				
-   //      });
+            $('#playerCrival').html(oppArr[0].nameFirst + ' ').append(oppArr[0].nameLast);
+            var statCrival = Math.round(1000 * (oppArr[0].H / oppArr[0].AB));
+            statCrival = '.'+ statCrival;
+            $('#statCrival').html(statCrival);
+
+            $('#playerPrival').html(oppArr[9].nameFirst + ' ').append(oppArr[9].nameLast);
+            var statPrival = Math.round(1000 * (oppArr[9].baOpp));
+            statPrival = '.'+ statPrival;
+            $('#statPrival').html(statPrival);
+         localStorage.setItem("opponentTeam", JSON.stringify(data));
+    });
+
+  
+});
+
+  // submits page to move to gameStart
+   $("#submitRival").on('click',function(e){
+    e.preventDefault();
+        window.location = '/gameStart';
+    });
+  
 
 
 

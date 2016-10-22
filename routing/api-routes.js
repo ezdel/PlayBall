@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var connection = require('./connection.js');
 var mysql = require('mysql');
+var opponentData = require('../data/opponent.js');
 var players;
 
 
@@ -58,7 +59,13 @@ app.post("/api/submit",function(req,res){
 	// focus on this one. Happy Coding!!
 })
 
-
+// ------ACCESS RIVAL PAGE------
+	app.get('/api/opponent', function(req, res){
+	     res.json(opponentData);
+	});
+	app.post('/api/opponent', function(req, res){
+			opponentData.push(req.body);
+	});
 
 }
 
