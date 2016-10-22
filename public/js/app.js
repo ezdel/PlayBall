@@ -34,8 +34,8 @@ for(i=0;i<res.length;i++){
        var b = $('<button>');
        b.attr("value", JSON.stringify(res[i]));
        b.attr("id", "player");
-       if(res[i].nameFirst||res[i].nameLast||res[i].POS||res[i].yearID){
-       b.text(res[i].nameFirst + " " + res[i].nameLast + " " + res[i].POS + " " +  res[i].yearID);
+       if(res[i].nameFirst||res[i].playerID||res[i].POS||res[i].yearID){
+       b.text(res[i].nameFirst + " " + res[i].playerID + " " + res[i].POS + " " +  res[i].yearID);
    		}else{
    		$("#results").empty();
    		$("#results").append("<h1>"+ "PlayBall!" + "</h1>")
